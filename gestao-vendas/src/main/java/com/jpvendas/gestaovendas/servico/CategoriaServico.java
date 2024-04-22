@@ -20,7 +20,10 @@ public class CategoriaServico {
 
     public Optional<Categoria> listarCategoriaPorID(Long id){
         return categoriaRepositorio.findById(id);
+    }
 
+    public Categoria salvarCategoria(Categoria categoria){
+        return categoriaRepositorio.save(categoria);
     }
 
 }
