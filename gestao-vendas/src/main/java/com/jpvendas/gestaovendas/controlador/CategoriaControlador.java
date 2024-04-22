@@ -3,11 +3,9 @@ package com.jpvendas.gestaovendas.controlador;
 import com.jpvendas.gestaovendas.entidades.Categoria;
 import com.jpvendas.gestaovendas.servico.CategoriaServico;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,5 +26,13 @@ public class CategoriaControlador {
     public ResponseEntity<Optional<Categoria>> listarCategoriaPorID(@PathVariable Long id){
       Optional<Categoria> categoria = categoriaServico.listarCategoriaPorID(id);
       return categoria.isPresent() ? ResponseEntity.ok(categoria) : ResponseEntity.notFound().build();
+
+    }
+
+    @PostMapping
+    public ResponseEntity<Categoria> salvar(@RequestBody Categoria categoria){
+        Categoria categoriaSalva = categoriaServico.salvarCategoria(categoria);
+        return ResponseEntity.status(HttpStatus.CREATED).body(categoriaSalva);
+
     }
 }
