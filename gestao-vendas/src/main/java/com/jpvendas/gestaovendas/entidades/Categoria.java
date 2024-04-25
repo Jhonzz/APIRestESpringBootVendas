@@ -1,7 +1,9 @@
 package com.jpvendas.gestaovendas.entidades;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table(name = "categoria")
@@ -14,5 +16,7 @@ public class Categoria {
     private Long codigo;
 
     @Column(name = "nome")
+    @NotBlank(message = "Nome") //valida que o campo não pode ser null ou vazio
+    @Length(min = 3, max = 50) //valida o minimo e maximo de caracteres         para que as validações funcionem é necessario informar o @valid no controller
     private String nome;
 }
