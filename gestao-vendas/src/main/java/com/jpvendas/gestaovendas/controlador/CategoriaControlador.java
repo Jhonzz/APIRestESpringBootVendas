@@ -35,4 +35,10 @@ public class CategoriaControlador {
         return ResponseEntity.status(HttpStatus.CREATED).body(categoriaSalva);
 
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Categoria> atualizar(@PathVariable Long id, @RequestBody Categoria categoria){
+        return ResponseEntity.ok(categoriaServico.atualizarCategoria(id, categoria));
+    }
+
 }
