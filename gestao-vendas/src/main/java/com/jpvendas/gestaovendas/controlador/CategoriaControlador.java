@@ -2,6 +2,7 @@ package com.jpvendas.gestaovendas.controlador;
 
 import com.jpvendas.gestaovendas.entidades.Categoria;
 import com.jpvendas.gestaovendas.servico.CategoriaServico;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,14 +31,14 @@ public class CategoriaControlador {
     }
 
     @PostMapping
-    public ResponseEntity<Categoria> salvar(@RequestBody Categoria categoria){
+    public ResponseEntity<Categoria> salvar(@Valid @RequestBody Categoria categoria){ //@Valid faz com que as validações do bean funcionem, como obrigatoriedade
         Categoria categoriaSalva = categoriaServico.salvarCategoria(categoria);
         return ResponseEntity.status(HttpStatus.CREATED).body(categoriaSalva);
 
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Categoria> atualizar(@PathVariable Long id, @RequestBody Categoria categoria){
+    public ResponseEntity<Categoria> atualizar(@PathVariable Long id, @Valid @RequestBody Categoria categoria){
         return ResponseEntity.ok(categoriaServico.atualizarCategoria(id, categoria));
     }
 
