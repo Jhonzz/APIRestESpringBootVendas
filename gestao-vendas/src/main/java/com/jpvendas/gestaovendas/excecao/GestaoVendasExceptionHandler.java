@@ -1,5 +1,6 @@
 package com.jpvendas.gestaovendas.excecao;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -8,10 +9,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @ControllerAdvice
@@ -29,6 +32,16 @@ public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler
         return handleExceptionInternal(ex, errors, headers, HttpStatus.BAD_REQUEST, request);
     }
 
+@ExceptionHandler(EmptyResultDataAccessException.class) //indica que há um metodo para tratar o erro buscado pela classe de controller advice
+    private ResponseEntity<Object> handleEmptyResultDataAccessException(EmptyResultDataAccessException ex, WebRequest request){
+        String msgUsuario = "Recurso não encontrado para o ID informado.";
+        String msgDesenvolvedor = ex.toString();
+
+        List<Errors> erros = Arrays.asList(new Errors(msgUsuario, msgDesenvolvedor));
+
+        return handleExceptionInternal(ex, erros, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+    }
+
     private List<Errors> gerarListaDeErros(BindingResult bindingResult) {
         List<Errors> erros = new ArrayList<Errors>();
         bindingResult.getFieldErrors().forEach(fieldError -> {
@@ -36,7 +49,6 @@ public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler
             String msgDesenvolvedor = fieldError.toString();
             erros.add(new Errors(msgUsuario, msgDesenvolvedor));
         });
-
 
         return erros;
     }
