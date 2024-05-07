@@ -5,7 +5,6 @@ import com.jpvendas.gestaovendas.repositorio.CategoriaRepositorio;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,6 +28,9 @@ public class CategoriaServico {
         return categoriaRepositorio.save(categoria);
     }
 
+    public void deletar(Long id){
+        categoriaRepositorio.deleteById(id);
+    }
     public Categoria atualizarCategoria(Long id, Categoria categoria){
         Categoria categoriaSalvar = validarCategoriaExiste(id);
         BeanUtils.copyProperties(categoria, categoriaSalvar, "id");
