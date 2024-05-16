@@ -45,4 +45,8 @@ public class CategoriaServico {
         return categoria.get();
     }
 
+
+    private void validarCategoriaDuplicada(Categoria categoria){
+        List<Categoria> categoriaList = categoriaRepositorio.findByNome(categoria.getNome());
+    }
 }
