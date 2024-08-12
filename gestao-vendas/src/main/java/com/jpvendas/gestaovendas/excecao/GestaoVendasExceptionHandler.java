@@ -31,6 +31,15 @@ public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler
 
         return handleExceptionInternal(ex, errors, headers, HttpStatus.BAD_REQUEST, request);
     }
+    @ExceptionHandler(RegraNegocioException.class)
+    public ResponseEntity<Object> handleRegraNegocioExeception(RegraNegocioException ex, WebRequest request){
+        String msgUsuario = ex.getMessage();
+        String msgDesenvolvedor = ex.getMessage();
+
+        List<Errors> erros = Arrays.asList(new Errors(msgUsuario, msgDesenvolvedor));
+
+        return handleExceptionInternal(ex, erros, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+    }
 
 @ExceptionHandler(EmptyResultDataAccessException.class) //indica que há um metodo para tratar o erro buscado pela classe de controller advice
     private ResponseEntity<Object> handleEmptyResultDataAccessException(EmptyResultDataAccessException ex, WebRequest request){
@@ -39,7 +48,7 @@ public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler
 
         List<Errors> erros = Arrays.asList(new Errors(msgUsuario, msgDesenvolvedor));
 
-        return handleExceptionInternal(ex, erros, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+        return handleExceptionInternal(ex, erros, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
     }
 
     private List<Errors> gerarListaDeErros(BindingResult bindingResult) {

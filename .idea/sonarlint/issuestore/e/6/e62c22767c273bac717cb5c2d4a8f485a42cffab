@@ -1,11 +1,11 @@
 
-o
-java:S2293."YReplace the type specification in this constructor call with the diamond operator ("<>").(§Î Ï
-a
-java:S2259<"FA "NullPointerException" could be thrown; "getCode()" can return null.(àÈšãûÿÿÿÿ
-`
-java:S2259>"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’
-`
-java:S2259>"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’
-\
-java:S22599"FA "NullPointerException" could be thrown; "getCode()" can return null.(¥ÅèÜ
+•
+java:S22937"YReplace the type specification in this constructor call with the diamond operator ("<>").(§Î ÏJ$516c5757-6aaf-4a2b-a903-9cd0dcf64940
+†
+java:S2259G"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’J$27c01148-aa3b-4d20-9be1-c70d2ad321a4
+†
+java:S2259G"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’J$101b06a5-f179-45a9-987a-5a09d084dbc8
+‚
+java:S2259B"FA "NullPointerException" could be thrown; "getCode()" can return null.(¥ÅèÜJ$8b9eafc0-585c-4326-945f-5995c98f1da6
+‡
+java:S2259E"FA "NullPointerException" could be thrown; "getCode()" can return null.(àÈšãûÿÿÿÿJ$842eb2fb-6d6e-465e-ae98-a251a18e4c9b
