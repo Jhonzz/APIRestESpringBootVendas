@@ -1,6 +1,7 @@
 package com.jpvendas.gestaovendas.servico;
 
 import com.jpvendas.gestaovendas.entidades.Categoria;
+import com.jpvendas.gestaovendas.excecao.RegraNegocioException;
 import com.jpvendas.gestaovendas.repositorio.CategoriaRepositorio;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ public class CategoriaServico {
     }
 
     public Categoria salvarCategoria(Categoria categoria){
+        validarCategoriaDuplicada(categoria);
         return categoriaRepositorio.save(categoria);
     }
 
@@ -33,6 +35,7 @@ public class CategoriaServico {
     }
     public Categoria atualizarCategoria(Long id, Categoria categoria){
         Categoria categoriaSalvar = validarCategoriaExiste(id);
+        validarCategoriaDuplicada(categoria);
         BeanUtils.copyProperties(categoria, categoriaSalvar, "id");
         return categoriaRepositorio.save(categoriaSalvar);
     }
@@ -46,7 +49,10 @@ public class CategoriaServico {
     }
 
 
-    private void validarCategoriaDuplicada(Categoria categoria){
-        List<Categoria> categoriaList = categoriaRepositorio.findByNome(categoria.getNome());
+    private void validarCategoriaDuplicada(Categoria categoria) {
+        Categoria categoriaEncontrada = categoriaRepositorio.findByNome(categoria.getNome());
+        if (categoriaEncontrada != null && categoriaEncontrada.getCodigo() != categoria.getCodigo()) {
+            throw new RegraNegocioException(String.format("A categoria %s já esta cadastrada", categoriaEncontrada.getNome().toUpperCase()));
+        }
     }
 }

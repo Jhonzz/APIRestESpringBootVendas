@@ -1,0 +1,11 @@
+
+o
+java:S2293."YReplace the type specification in this constructor call with the diamond operator ("<>").(§Î Ï
+a
+java:S2259<"FA "NullPointerException" could be thrown; "getCode()" can return null.(àÈšãûÿÿÿÿ
+`
+java:S2259>"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’
+`
+java:S2259>"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’
+\
+java:S22599"FA "NullPointerException" could be thrown; "getCode()" can return null.(¥ÅèÜ
