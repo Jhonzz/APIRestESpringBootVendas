@@ -1,11 +1,19 @@
 
-•
-java:S22937"YReplace the type specification in this constructor call with the diamond operator ("<>").(§Î ÏJ$516c5757-6aaf-4a2b-a903-9cd0dcf64940
-†
-java:S2259G"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’J$27c01148-aa3b-4d20-9be1-c70d2ad321a4
-†
-java:S2259G"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’J$101b06a5-f179-45a9-987a-5a09d084dbc8
-‚
-java:S2259B"FA "NullPointerException" could be thrown; "getCode()" can return null.(¥ÅèÜJ$8b9eafc0-585c-4326-945f-5995c98f1da6
-‡
-java:S2259E"FA "NullPointerException" could be thrown; "getCode()" can return null.(àÈšãûÿÿÿÿJ$842eb2fb-6d6e-465e-ae98-a251a18e4c9b
+œ
+java:S2293G"YReplace the type specification in this constructor call with the diamond operator ("<>").(§Î Ï8¦ñı£2J$8a55d6fe-19be-4b40-a2d6-f6b860dfa7e8
+˜
+java:S2259W"PA "NullPointerException" could be thrown; "getDefaultMessage()" can return null.(ñÍÌÀÿÿÿÿÿ8ŒÏÜş£2J$519b3078-3b62-4ad6-b7e8-3de14f24e1e0
+‰
+java:S2259R"FA "NullPointerException" could be thrown; "getCode()" can return null.(¥ÅèÜ8ÏÜş£2J$73447faa-089f-4f5b-90fc-36f79c896282
+˜
+java:S2259["PA "NullPointerException" could be thrown; "getDefaultMessage()" can return null.(¤ƒ€Àùÿÿÿÿ8ŒÏÜş£2J$9b95cc04-7694-4789-b02b-246462ddef73
+
+java:S2259\"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’8ŒÏÜş£2J$bae7f93f-037e-4316-b14f-b78fa29609db
+˜
+java:S2259S"PA "NullPointerException" could be thrown; "getDefaultMessage()" can return null.(ñÍÌÀÿÿÿÿÿ8ŒÏÜş£2J$f8dcc049-7ec8-451b-89bb-642824a7f14c
+
+java:S2259Z"FA "NullPointerException" could be thrown; "getCode()" can return null.(àÈšãûÿÿÿÿ8ÏÜş£2J$b3752899-7611-47cc-97ec-65ef5750896b
+
+java:S2259\"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’8ŒÏÜş£2J$ff45ae2c-2eb8-479b-92ad-23b6b71f30e2
+
+java:S2259V"FA "NullPointerException" could be thrown; "getCode()" can return null.(¥¡ˆ´øÿÿÿÿ8ŒÏÜş£2J$d5cd1c1f-ef8d-4b6f-aafb-369f3fa51179
