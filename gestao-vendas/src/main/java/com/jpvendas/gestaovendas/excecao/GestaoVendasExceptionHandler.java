@@ -1,5 +1,6 @@
 package com.jpvendas.gestaovendas.excecao;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,7 @@ import java.util.List;
 public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler {
 
     public static final String CONSTANT_VALIDATION_NOT_BLANK = "NotBlank";
+    public static final String CONSTANT_VALIDATION_NOT_NULL = "NotNull";
     private static final String CONSTANT_VALIDATION_LENGTH = "Length";
 
     @Override
@@ -31,8 +33,9 @@ public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler
 
         return handleExceptionInternal(ex, errors, headers, HttpStatus.BAD_REQUEST, request);
     }
+
     @ExceptionHandler(RegraNegocioException.class)
-    public ResponseEntity<Object> handleRegraNegocioExeception(RegraNegocioException ex, WebRequest request){
+    public ResponseEntity<Object> handleRegraNegocioExeception(RegraNegocioException ex, WebRequest request) {
         String msgUsuario = ex.getMessage();
         String msgDesenvolvedor = ex.getMessage();
 
@@ -41,14 +44,27 @@ public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler
         return handleExceptionInternal(ex, erros, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
     }
 
-@ExceptionHandler(EmptyResultDataAccessException.class) //indica que há um metodo para tratar o erro buscado pela classe de controller advice
-    private ResponseEntity<Object> handleEmptyResultDataAccessException(EmptyResultDataAccessException ex, WebRequest request){
+    @ExceptionHandler(EmptyResultDataAccessException.class)
+    //indica que há um metodo para tratar o erro buscado pela classe de controller advice
+    private ResponseEntity<Object> handleEmptyResultDataAccessException(EmptyResultDataAccessException ex, WebRequest request) {
         String msgUsuario = "Recurso não encontrado para o ID informado.";
         String msgDesenvolvedor = ex.toString();
 
         List<Errors> erros = Arrays.asList(new Errors(msgUsuario, msgDesenvolvedor));
 
         return handleExceptionInternal(ex, erros, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    private ResponseEntity<Object> dataIntegrityViolationException(DataIntegrityViolationException ex, WebRequest request){
+        String msgUsuario = "Recurso não encontrado para o ID informado";
+        String msgDesenvolvedor = ex.toString();
+
+
+        List<Errors> erros = Arrays.asList(new Errors(msgUsuario, msgDesenvolvedor));
+
+        return handleExceptionInternal(ex, erros, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+
     }
 
     private List<Errors> gerarListaDeErros(BindingResult bindingResult) {
@@ -64,10 +80,15 @@ public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler
 
     private String tratarMensagemDeErroParaUsuario(FieldError fieldError) {
         if (fieldError.getCode().equals(CONSTANT_VALIDATION_NOT_BLANK)) {
-            return fieldError.getField().concat(" é obrigatorio");
+            return fieldError.getDefaultMessage().concat(" é obrigatorio");
         }
+
+        if (fieldError.getCode().equals(CONSTANT_VALIDATION_NOT_NULL)){
+            return fieldError.getDefaultMessage().concat(" é obrigatorio");
+        }
+
         if (fieldError.getCode().equals(CONSTANT_VALIDATION_LENGTH)) {
-            return fieldError.getField().concat(String.format(" deve ter entre %s e %s caracteres.",
+            return fieldError.getDefaultMessage().concat(String.format(" deve ter entre %s e %s caracteres.",
                     fieldError.getArguments()[2], fieldError.getArguments()[1]));
         }
         return fieldError.toString();

@@ -13,3 +13,27 @@ y
 Igestao-vendas/src/main/java/com/jpvendas/gestaovendas/excecao/Errors.java,3\0\307db0bbd87d3a54622368048e7452f75668ab22
 è
 _gestao-vendas/src/main/java/com/jpvendas/gestaovendas/excecao/GestaoVendasExceptionHandler.java,e\6\e62c22767c273bac717cb5c2d4a8f485a42cffab
+P
+ gestao-vendas/docker-compose.yml,8\d\8d8a2701026c5092c1774e014cdbfd86abac011c
+E
+gestao-vendas/pom.xml,6\d\6d31e1c9d668a1552331ec17be4bb37c9fda44e3
+|
+Lgestao-vendas/src/main/java/com/jpvendas/gestaovendas/entidades/Cliente.java,6\8\683f674d56035eed075665aa1fdc9d4ba86e7003
+~
+Ngestao-vendas/src/main/java/com/jpvendas/gestaovendas/entidades/Categoria.java,4\5\45eacad38cf30e32e2fe956a8847bd3701e89b5a
+|
+Lgestao-vendas/src/main/java/com/jpvendas/gestaovendas/entidades/Produto.java,1\5\152b038086fa195822041d7ab91f7fda65714e84
+ã
+[gestao-vendas/src/main/java/com/jpvendas/gestaovendas/controlador/CategoriaControlador.java,a\0\a02eb5d3fefb49c77fb40c1061e88bb49ce9a357
+É
+Sgestao-vendas/src/main/java/com/jpvendas/gestaovendas/dto/CategoriaResponseDTO.java,d\5\d57fa5d1d83fb4791fd0f9d6721098f14f839ac0
+É
+Sgestao-vendas/src/main/java/com/jpvendas/gestaovendas/DTO/CategoriaResponseDTO.java,f\3\f365ac9ce4c4ea67648b38744a633ddb8d965f2b
+Ç
+Rgestao-vendas/src/main/java/com/jpvendas/gestaovendas/DTO/CategoriaRequestDTO.java,3\4\34dc2e12812ee24027765edeff9bc492f1b3668f
+â
+Ygestao-vendas/src/main/java/com/jpvendas/gestaovendas/repositorio/ProdutoRepositorio.java,c\0\c036e8591dd094129f4ab5544d69b4da10285726
+â
+Ygestao-vendas/src/main/java/com/jpvendas/gestaovendas/controlador/ProdutoControlador.java,6\d\6d577c7a4a83d34783a16139a23ebc98f9ef7d68
+Å
+Qgestao-vendas/src/main/java/com/jpvendas/gestaovendas/servico/ProdutoServico.java,6\f\6f7a0bfec815ddf5915d30d998905f5200ad86ae
