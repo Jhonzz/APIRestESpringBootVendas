@@ -1,7 +1,7 @@
 package com.jpvendas.gestaovendas.controlador;
 
-import com.jpvendas.gestaovendas.DTO.CategoriaRequestDTO;
-import com.jpvendas.gestaovendas.DTO.CategoriaResponseDTO;
+import com.jpvendas.gestaovendas.DTO.categoria.CategoriaRequestDTO;
+import com.jpvendas.gestaovendas.DTO.categoria.CategoriaResponseDTO;
 import com.jpvendas.gestaovendas.entidades.Categoria;
 import com.jpvendas.gestaovendas.servico.CategoriaServico;
 import io.swagger.v3.oas.annotations.Operation;
@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -50,8 +51,10 @@ public class CategoriaControlador {
 
     @Operation(summary = "Atualizar categoria")
     @PutMapping("/{id}")
-    public ResponseEntity<Categoria> atualizar(@PathVariable Long id, @Valid @RequestBody CategoriaRequestDTO categoriaRequestDTO) { //@PathVariable indica que é um parametro que é passado na URL, mas não como o que vem apos o ?
-        return ResponseEntity.ok(categoriaServico.atualizarCategoria(id, categoriaRequestDTO.converterParaEntidade(id)));
+        public ResponseEntity<CategoriaResponseDTO> atualizar(@PathVariable Long id, @Valid @RequestBody CategoriaRequestDTO categoriaRequestDTO) { //@PathVariable indica que é um parametro que é passado na URL, mas não como o que vem apos o ?
+
+        Categoria categoriaAtualizada = categoriaServico.atualizarCategoria(id, categoriaRequestDTO.converterParaEntidade(id));
+        return ResponseEntity.ok(CategoriaResponseDTO.converterParaCategoriaDTO(categoriaAtualizada));
 
     }
 

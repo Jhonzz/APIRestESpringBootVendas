@@ -1,19 +1,21 @@
 
 œ
-java:S2293G"YReplace the type specification in this constructor call with the diamond operator ("<>").(§Î Ï8¦ñı£2J$8a55d6fe-19be-4b40-a2d6-f6b860dfa7e8
-˜
-java:S2259W"PA "NullPointerException" could be thrown; "getDefaultMessage()" can return null.(ñÍÌÀÿÿÿÿÿ8ŒÏÜş£2J$519b3078-3b62-4ad6-b7e8-3de14f24e1e0
+java:S2293I"YReplace the type specification in this constructor call with the diamond operator ("<>").(§Î Ï8ûŸÃ—ª2J$236a0aa5-7ac0-4002-a4da-fc7a290702ee
 ‰
-java:S2259R"FA "NullPointerException" could be thrown; "getCode()" can return null.(¥ÅèÜ8ÏÜş£2J$73447faa-089f-4f5b-90fc-36f79c896282
+java:S2259T"FA "NullPointerException" could be thrown; "getCode()" can return null.(¥ÅèÜ8ÿŸÃ—ª2J$56dc26ae-3a81-44b8-bb74-678739d2577a
 ˜
-java:S2259["PA "NullPointerException" could be thrown; "getDefaultMessage()" can return null.(¤ƒ€Àùÿÿÿÿ8ŒÏÜş£2J$9b95cc04-7694-4789-b02b-246462ddef73
+java:S2259Y"PA "NullPointerException" could be thrown; "getDefaultMessage()" can return null.(ñÍÌÀÿÿÿÿÿ8ÿŸÃ—ª2J$a744e085-f84d-4f79-bfe5-4c17f869e90a
+
+java:S2259a"FA "NullPointerException" could be thrown; "getCode()" can return null.(ù†Øöùÿÿÿÿ8ÿŸÃ—ª2J$7d11665c-90f9-4bc6-81db-161495a68f29
 
-java:S2259\"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’8ŒÏÜş£2J$bae7f93f-037e-4316-b14f-b78fa29609db
+java:S2259^"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’8ÿŸÃ—ª2J$61699450-17f1-409e-ae60-513e6eb3ff57
+
+java:S2259^"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’8ÿŸÃ—ª2J$81656a58-2df4-48ce-8f5c-29d7b906f235
+
+java:S2259X"FA "NullPointerException" could be thrown; "getCode()" can return null.(¥¡ˆ´øÿÿÿÿ8€ Ã—ª2J$78283a48-ba2a-4075-aea6-5242d86b3d84
 ˜
-java:S2259S"PA "NullPointerException" could be thrown; "getDefaultMessage()" can return null.(ñÍÌÀÿÿÿÿÿ8ŒÏÜş£2J$f8dcc049-7ec8-451b-89bb-642824a7f14c
+java:S2259U"PA "NullPointerException" could be thrown; "getDefaultMessage()" can return null.(ñÍÌÀÿÿÿÿÿ8ÿŸÃ—ª2J$2aa77d19-26f2-4dae-96de-0da5c7760ff9
+˜
+java:S2259]"PA "NullPointerException" could be thrown; "getDefaultMessage()" can return null.(¤ƒ€Àùÿÿÿÿ8ÿŸÃ—ª2J$5564dac9-a767-4006-85fc-2a30a796447e
 
-java:S2259Z"FA "NullPointerException" could be thrown; "getCode()" can return null.(àÈšãûÿÿÿÿ8ÏÜş£2J$b3752899-7611-47cc-97ec-65ef5750896b
-
-java:S2259\"JA "NullPointerException" could be thrown; "getArguments" is nullable here.(¨²ö’8ŒÏÜş£2J$ff45ae2c-2eb8-479b-92ad-23b6b71f30e2
-
-java:S2259V"FA "NullPointerException" could be thrown; "getCode()" can return null.(¥¡ˆ´øÿÿÿÿ8ŒÏÜş£2J$d5cd1c1f-ef8d-4b6f-aafb-369f3fa51179
+java:S2259\"FA "NullPointerException" could be thrown; "getCode()" can return null.(àÈšãûÿÿÿÿ8€ Ã—ª2J$0fc11735-6ddb-4a98-98bd-9acb39d9992b

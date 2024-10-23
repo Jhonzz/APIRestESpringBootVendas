@@ -1,5 +1,7 @@
 
-
-java:S49735"<Strings and Boxed types should be compared using "equals()".(°Ñø8Ù¦×»”2J$6cdd9f07-0e33-4cb2-83a2-1f18f5226dfd
-…
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8İ¦×»”2J$53f50ba1-aea6-4327-94b9-bee33d6fe286
+Y
+java:S4973;"<Strings and Boxed types should be compared using "equals()".(°Ñø8Úäƒ©2
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8’Úäƒ©2
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8’Úäƒ©2

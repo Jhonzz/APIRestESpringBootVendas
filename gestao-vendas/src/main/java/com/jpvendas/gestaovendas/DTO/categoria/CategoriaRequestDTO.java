@@ -1,4 +1,4 @@
-package com.jpvendas.gestaovendas.DTO;
+package com.jpvendas.gestaovendas.DTO.categoria;
 
 import com.jpvendas.gestaovendas.entidades.Categoria;
 import io.swagger.annotations.ApiParam;
@@ -11,9 +11,9 @@ import org.hibernate.validator.constraints.Length;
 @Data
 public class CategoriaRequestDTO {
 
-    @ApiParam(value = "nome")
+    @ApiParam(value = "Nome") //@apimodelproperty para spring
     @NotBlank(message = "Nome") //valida que o campo não pode ser null ou vazio
-    @Length(min = 3, max = 50) //valida o minimo e maximo de caracteres         para que as validações funcionem é necessario informar o @valid no controller
+    @Length(min = 3, max = 50, message = "Nome") //valida o minimo e maximo de caracteres         para que as validações funcionem é necessario informar o @valid no controller
     private String nome;
 
     public Categoria converterParaEntidade(){
@@ -22,7 +22,6 @@ public class CategoriaRequestDTO {
 
     public Categoria converterParaEntidade(Long codigo){
         return new Categoria(codigo, nome);
-
     }
 
 }

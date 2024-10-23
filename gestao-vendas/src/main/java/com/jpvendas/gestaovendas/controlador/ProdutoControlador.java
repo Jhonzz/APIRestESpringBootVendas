@@ -1,5 +1,7 @@
 package com.jpvendas.gestaovendas.controlador;
 
+import com.jpvendas.gestaovendas.DTO.produto.ProdutoRequestDTO;
+import com.jpvendas.gestaovendas.DTO.produto.ProdutoResponseDTO;
 import com.jpvendas.gestaovendas.entidades.Produto;
 import com.jpvendas.gestaovendas.servico.ProdutoServico;
 import io.swagger.v3.oas.annotations.Operation;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Tag(name = "Produto")
 @RestController
@@ -23,26 +26,28 @@ public class ProdutoControlador {
 
     @Operation(summary = "Listar por tipo de categoria")
     @GetMapping
-    public List<Produto> listarProdutos(@PathVariable Long idCategoria){
-        return produtoServico.listarTodos(idCategoria);
+    public List<ProdutoResponseDTO> listarProdutos(@PathVariable Long idCategoria){
+        return produtoServico.listarTodos(idCategoria).stream().map(produto -> ProdutoResponseDTO.converterProdutoParaDTO(produto)).collect(Collectors.toList());
     }
 
     @Operation(summary = "Listar por ID")
     @GetMapping("/{idProduto}")
-    public ResponseEntity<Optional<Produto>> listarProdutoPorID(@PathVariable Long idCategoria, @PathVariable Long idProduto){ //@PathVariable indica que é um parametro que é passado na URL, mas não como o que vem apos o ?
+    public ResponseEntity<ProdutoResponseDTO> listarProdutoPorID(@PathVariable Long idCategoria, @PathVariable Long idProduto){ //@PathVariable indica que é um parametro que é passado na URL, mas não como o que vem apos o ?
         Optional<Produto> produto = produtoServico.buscarPorCodigo(idCategoria, idProduto);
-        return produto.isPresent() ? ResponseEntity.ok(produto) : ResponseEntity.notFound().build();
+        return produto.isPresent() ? ResponseEntity.ok(ProdutoResponseDTO.converterProdutoParaDTO(produto.get())) : ResponseEntity.notFound().build();
     }
 
     @Operation(summary = "Salvar produto")
     @PostMapping
-    public ResponseEntity<Produto> salvarProduto(@PathVariable Long idCategoria, @Valid @RequestBody Produto produto){
-        return ResponseEntity.status(HttpStatus.CREATED).body(produtoServico.salvarProduto(idCategoria, produto));
+    public ResponseEntity<ProdutoResponseDTO> salvarProduto(@PathVariable Long idCategoria, @Valid @RequestBody ProdutoRequestDTO produto){
+        Produto produtoSalvo = produtoServico.salvarProduto(idCategoria, produto.converterDTOParaEntidade(idCategoria));
+        return ResponseEntity.status(HttpStatus.CREATED).body(ProdutoResponseDTO.converterProdutoParaDTO(produtoSalvo));
     }
     @Operation(summary = "Atualizar produto")
     @PutMapping("/{idProduto}")
-    public ResponseEntity<Produto> atualizarProduto(@PathVariable Long idCategoria, @PathVariable Long idProduto, @Valid @RequestBody Produto produto){
-        return ResponseEntity.ok(produtoServico.atualizarProduto(idCategoria, idProduto, produto));
+    public ResponseEntity<ProdutoResponseDTO> atualizarProduto(@PathVariable Long idCategoria, @PathVariable Long idProduto, @Valid @RequestBody ProdutoRequestDTO produto){
+        Produto produtoAtualizado = produtoServico.atualizarProduto(idCategoria, idProduto, produto.converterDTOParaEntidade(idCategoria, idProduto));
+        return ResponseEntity.ok(ProdutoResponseDTO.converterProdutoParaDTO(produtoAtualizado));
     }
 
     @Operation(summary = "Deletar Produto")

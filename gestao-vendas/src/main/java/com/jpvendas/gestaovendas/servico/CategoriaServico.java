@@ -1,8 +1,10 @@
 package com.jpvendas.gestaovendas.servico;
 
 import com.jpvendas.gestaovendas.entidades.Categoria;
+import com.jpvendas.gestaovendas.entidades.Produto;
 import com.jpvendas.gestaovendas.excecao.RegraNegocioException;
 import com.jpvendas.gestaovendas.repositorio.CategoriaRepositorio;
+import com.jpvendas.gestaovendas.repositorio.ProdutoRepositorio;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -15,6 +17,9 @@ public class CategoriaServico {
 
     @Autowired
     private CategoriaRepositorio categoriaRepositorio;
+
+    @Autowired
+    private ProdutoRepositorio produtoRepositorio;
 
     public List<Categoria> listarCategorias(){
         return categoriaRepositorio.findAll();
@@ -30,6 +35,7 @@ public class CategoriaServico {
     }
 
     public void deletar(Long id){
+        validarCategoriaEstaSendoUtilizada(id);
         categoriaRepositorio.deleteById(id);
     }
     public Categoria atualizarCategoria(Long id, Categoria categoria){
@@ -52,6 +58,13 @@ public class CategoriaServico {
         Categoria categoriaEncontrada = categoriaRepositorio.findByNome(categoria.getNome());
         if (categoriaEncontrada != null && categoriaEncontrada.getCodigo() != categoria.getCodigo()) {
             throw new RegraNegocioException(String.format("A categoria %s já esta cadastrada", categoriaEncontrada.getNome().toUpperCase()));
+        }
+    }
+
+    private void validarCategoriaEstaSendoUtilizada(Long categoria){
+        List<Produto> categoriaUtilizada = produtoRepositorio.findByCategoriaCodigo(categoria);
+        if (categoriaUtilizada != null) {
+            throw new RegraNegocioException("Categoria informada é utilizada em um produto ativo");
         }
     }
 }
