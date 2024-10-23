@@ -7,7 +7,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,8 +27,8 @@ public class ProdutoServico {
         return produtoRepositorio.findByCategoriaCodigo(codigoCategoria);
     }
 
-    public Optional<Produto> buscarPorCodigo(Long codigo, Long codigoCategoria){
-       return produtoRepositorio.buscarPorCodigo(codigo, codigoCategoria);
+    public Optional<Produto> buscarPorCodigo(Long codigoCategoria, Long codigo){
+       return produtoRepositorio.buscarPorCodigo(codigoCategoria, codigo);
     }
 
     public Produto salvarProduto(Long codigoCategoria, Produto produto){
@@ -39,20 +38,19 @@ public class ProdutoServico {
     }
 
     public Produto atualizarProduto(Long codigoCategoria, Long codigoProduto, Produto produto){
-        Produto produtoSalvar = validarProdutoExiste(codigoProduto, codigoCategoria);
+        Produto produtoSalvar = validarProdutoExiste(codigoCategoria, codigoProduto);
         validarCategoriaDoProdutoNaoExiste(codigoCategoria);
         validarProdutoDuplicado(produto);
         BeanUtils.copyProperties(produto, produtoSalvar, "codigo"); //produto ira ser enviado com as modificações, produtosalvar ira alterar e ignorar o campo codigo
         return produtoRepositorio.save(produtoSalvar);
     }
 
-
     public void deletarProduto(Long codigoCategoria, Long codigoProduto){
-        Produto produto = validarProdutoExiste(codigoProduto, codigoCategoria);
+        Produto produto = validarProdutoExiste(codigoCategoria, codigoProduto);
         produtoRepositorio.delete(produto);
     }
-    private Produto validarProdutoExiste(Long codigoProduto, Long codigoCategoria) {
-        Optional<Produto> produto = buscarPorCodigo(codigoProduto, codigoCategoria);
+    private Produto validarProdutoExiste(Long codigoCategoria, Long codigoProduto) {
+        Optional<Produto> produto = buscarPorCodigo(codigoCategoria, codigoProduto);
         if (produto.isEmpty()){
             throw new EmptyResultDataAccessException(1);
         }

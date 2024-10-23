@@ -25,6 +25,7 @@ public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler
     public static final String CONSTANT_VALIDATION_NOT_BLANK = "NotBlank";
     public static final String CONSTANT_VALIDATION_NOT_NULL = "NotNull";
     private static final String CONSTANT_VALIDATION_LENGTH = "Length";
+    private static final String CONSTANT_VALIDATION_PATTERN = "Pattern";
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
@@ -49,6 +50,7 @@ public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler
     private ResponseEntity<Object> handleEmptyResultDataAccessException(EmptyResultDataAccessException ex, WebRequest request) {
         String msgUsuario = "Recurso não encontrado para o ID informado.";
         String msgDesenvolvedor = ex.toString();
+        logger.error(ex.getStackTrace(), ex);
 
         List<Errors> erros = Arrays.asList(new Errors(msgUsuario, msgDesenvolvedor));
 
@@ -90,6 +92,11 @@ public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler
         if (fieldError.getCode().equals(CONSTANT_VALIDATION_LENGTH)) {
             return fieldError.getDefaultMessage().concat(String.format(" deve ter entre %s e %s caracteres.",
                     fieldError.getArguments()[2], fieldError.getArguments()[1]));
+        }
+
+        if (fieldError.getCode().equals((CONSTANT_VALIDATION_PATTERN))) {
+            return "Formato invalido para ".concat(fieldError.getDefaultMessage());
+
         }
         return fieldError.toString();
     }

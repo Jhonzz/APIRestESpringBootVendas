@@ -30,4 +30,8 @@ public class Categoria {
         this.codigo = codigo;
         this.nome = nome;
     }
+
+    public Categoria(Long codigo) {
+        this.codigo = codigo;
+    }
 }
