@@ -1,7 +1,7 @@
 
-…
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ßÚí¨2J$3d4f4c31-aa5f-4bf8-9b73-6cf9d1003c1a
-½
-java:S6204!"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹8áÚí¨2J$cd5933ef-f969-4cb3-b19c-9ebd90760472
-Ÿ
-java:S1612 "\Replace this lambda with method reference 'CategoriaResponseDTO::converterParaCategoriaDTO'.(¾šñ¨8âÚí¨2J$62d9777e-8019-4200-84a2-dde6e6bdbef2
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ş¢»«2
+—
+java:S6204!"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹8‘Ş¢»«2
+y
+java:S1612 "\Replace this lambda with method reference 'CategoriaResponseDTO::converterParaCategoriaDTO'.(¾šñ¨8’Ş¢»«2

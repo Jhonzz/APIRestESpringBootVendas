@@ -57,3 +57,5 @@ Zgestao-vendas/src/main/java/com/jpvendas/gestaovendas/DTO/cliente/EnderecoRespo
 Xgestao-vendas/src/main/java/com/jpvendas/gestaovendas/DTO/cliente/ClienteRequestDTO.java,c\f\cf4fcafc3d82d1436d855ce61402e7c64b35137b
 ‰
 Ygestao-vendas/src/main/java/com/jpvendas/gestaovendas/DTO/cliente/EnderecoRequestDTO.java,9\0\908ffaea9e531c4a26ae9169dc3837c9e73ddd8e
+z
+Jgestao-vendas/src/main/java/com/jpvendas/gestaovendas/entidades/Venda.java,3\7\371d14743647ff33897ae0a7c564a58d51eb41d2
