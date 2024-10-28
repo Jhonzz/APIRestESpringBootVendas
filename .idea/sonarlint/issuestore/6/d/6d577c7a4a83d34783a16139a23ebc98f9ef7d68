@@ -1,7 +1,7 @@
 
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8¿Þ¢»«2
-œ
-java:S6204"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(Ñõƒƒþÿÿÿÿ8ÁÞ¢»«2
-z
-java:S1612"XReplace this lambda with method reference 'ProdutoResponseDTO::converterProdutoParaDTO'.(Ñõƒƒþÿÿÿÿ8ÃÞ¢»«2
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8¿Þ¢»«2J$54f84986-a952-408b-8b75-37b19e844615
+Â
+java:S6204"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(Ñõƒƒþÿÿÿÿ8ÁÞ¢»«2J$4f38e209-ea73-4ae7-91bd-e2dfbce1cc61
+ 
+java:S1612"XReplace this lambda with method reference 'ProdutoResponseDTO::converterProdutoParaDTO'.(Ñõƒƒþÿÿÿÿ8ÃÞ¢»«2J$30129fdf-65a2-4880-94c1-3fac75d073a5

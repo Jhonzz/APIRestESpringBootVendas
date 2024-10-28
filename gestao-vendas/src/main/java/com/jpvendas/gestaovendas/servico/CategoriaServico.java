@@ -63,7 +63,7 @@ public class CategoriaServico {
 
     private void validarCategoriaEstaSendoUtilizada(Long categoria){
         List<Produto> categoriaUtilizada = produtoRepositorio.findByCategoriaCodigo(categoria);
-        if (categoriaUtilizada != null) {
+        if (categoriaUtilizada.isEmpty()) {
             throw new RegraNegocioException("Categoria informada é utilizada em um produto ativo");
         }
     }
