@@ -1,7 +1,7 @@
 
-Y
-java:S4973;"<Strings and Boxed types should be compared using "equals()".(°Ñø8Üİ¢»«2
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8İİ¢»«2
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8İİ¢»«2
+
+java:S4973;"<Strings and Boxed types should be compared using "equals()".(°Ñø8Üİ¢»«2J$f3c6570c-9157-4ed0-829f-d6be80c394ea
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8İİ¢»«2J$3f6b1080-532a-467b-893a-e88137e80fe1
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8İİ¢»«2J$7c771190-e908-40f3-b242-0fd5f78ac57b

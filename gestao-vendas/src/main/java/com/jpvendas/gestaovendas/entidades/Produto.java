@@ -45,4 +45,5 @@ public class Produto {
         this.observacao = observacao;
         this.categoria = categoria;
     }
+
 }
