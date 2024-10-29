@@ -1,9 +1,9 @@
 
 Â
-java:S6204#"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(³ÏÆĞøÿÿÿÿ8ˆÈŸ‚­2J$a35431c4-aa4d-4cc6-b8db-5c83fe93944a
+java:S6204$"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(³ÏÆĞøÿÿÿÿ8şãş¬­2J$ed12227c-3dab-4238-9c8f-676584966c0c
 •
-java:S1612#"MReplace this lambda with method reference 'this::converterVendaParaVendaDTO'.(³ÏÆĞøÿÿÿÿ8‹ÈŸ‚­2J$474e0a6d-5154-4e1f-94b5-6b24e13ed9ad
+java:S1612$"MReplace this lambda with method reference 'this::converterVendaParaVendaDTO'.(³ÏÆĞøÿÿÿÿ8ÿãş¬­2J$c238a5dd-6eb1-4c7a-ad5c-7e399666dc7c
 ½
-java:S62042"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(¸ØèÍ8ÈŸ‚­2J$0121e70c-c222-4861-af68-7de2be238d9f
+java:S6204B"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(¸ØèÍ8‚äş¬­2J$446367e4-142f-4cc9-8c06-e9d3bf93bf94
 
-java:S16122"LReplace this lambda with method reference 'this::converterItemVendaParaDTO'.(¸ØèÍ8ÈŸ‚­2J$40ad1179-883c-4cbe-9e1f-676c08778e74
+java:S1612B"LReplace this lambda with method reference 'this::converterItemVendaParaDTO'.(¸ØèÍ8ƒäş¬­2J$dd61f49e-3a44-48a9-af52-1bbaec05f6d3

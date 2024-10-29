@@ -19,9 +19,16 @@ public class VendaControlador {
     @Autowired
     private VendaServico vendaServico;
 
-    @Operation(summary = "Listar vendas por id Cliente")
+    @Operation(summary = "Listar vendas por ID Cliente")
     @GetMapping("/cliente/{idCliente}")
     public ResponseEntity<ClienteVendaResponseDTO> listarVendaPorIDCliente(@PathVariable Long idCliente){
         return ResponseEntity.ok(vendaServico.listarVendaPorCliente(idCliente));
     }
+
+    @Operation(summary = "Listar venda por ID")
+    @GetMapping("/{idVenda}")
+    public ResponseEntity<ClienteVendaResponseDTO> listarVendaPorID(@PathVariable Long idVenda){
+        return ResponseEntity.ok(vendaServico.listarVendaPorCodigo(idVenda));
+    }
+
 }
