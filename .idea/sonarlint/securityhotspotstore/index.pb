@@ -77,3 +77,5 @@ Xgestao-vendas/src/main/java/com/jpvendas/gestaovendas/repositorio/VendasReposit
 [gestao-vendas/src/main/java/com/jpvendas/gestaovendas/repositorio/ItemVendaRepositorio.java,1\d\1d2358e48e29998424c3a822718cf218736afa57
 ‡
 Wgestao-vendas/src/main/java/com/jpvendas/gestaovendas/controlador/VendaControlador.java,f\4\f4999df2de66c5db1376a33e154111b03ba2c505
+‡
+Wgestao-vendas/src/main/java/com/jpvendas/gestaovendas/servico/AbstractVendaServico.java,3\d\3deba9a7203a240bc77f255f48fc05a2b341c39b

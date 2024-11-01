@@ -1,7 +1,6 @@
 package com.jpvendas.gestaovendas.servico;
 
 import com.jpvendas.gestaovendas.DTO.venda.ClienteVendaResponseDTO;
-import com.jpvendas.gestaovendas.DTO.venda.ItemVendaResponseDTO;
 import com.jpvendas.gestaovendas.DTO.venda.VendasResponseDTO;
 import com.jpvendas.gestaovendas.entidades.Cliente;
 import com.jpvendas.gestaovendas.entidades.ItemVenda;
@@ -18,7 +17,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class VendaServico {
+public class VendaServico extends AbstractVendaServico{
     private VendasRepositorio vendasRepositorio;
     private ItemVendaRepositorio itemVendaRepositorio;
     private ClienteServico clienteServico;
@@ -33,14 +32,15 @@ public class VendaServico {
     public ClienteVendaResponseDTO listarVendaPorCliente(Long codigoCliente){ //realiza busca de vendas baseado no ID informado
         Cliente cliente = validarClienteExiste(codigoCliente);
         List<VendasResponseDTO> vendaResponseDTOList = vendasRepositorio.findByClienteCodigo(codigoCliente).stream().
-                map(produto -> converterVendaParaVendaDTO(produto)).collect(Collectors.toList());
+                map(venda -> converterVendaParaVendaDTO(venda, itemVendaRepositorio.findByVendaCodigo(venda.getCodigo()))).collect(Collectors.toList());
 
        return new ClienteVendaResponseDTO(cliente.getNome(), vendaResponseDTOList);
     }
 
     public ClienteVendaResponseDTO listarVendaPorCodigo(Long codigoVenda){
         Venda venda = validarVendaExiste(codigoVenda);
-        return new ClienteVendaResponseDTO(venda.getCliente().getNome(), Arrays.asList(converterVendaParaVendaDTO(venda)));
+        List<ItemVenda> itensVendaList = itemVendaRepositorio.findByVendaCodigo(venda.getCodigo());
+        return new ClienteVendaResponseDTO(venda.getCliente().getNome(), Arrays.asList(converterVendaParaVendaDTO(venda, itensVendaList)));
         //como o objeto pede por uma lista então usei arrays.aslist para que vire uma lista mesmo passando uma venda
     }
 
@@ -61,16 +61,6 @@ public class VendaServico {
         return clienteEncontrado.get();
     }
 
-    private VendasResponseDTO converterVendaParaVendaDTO(Venda venda){
-        List<ItemVendaResponseDTO> itensVendasResponseDTO = itemVendaRepositorio.findByVendaCodigo(venda.getCodigo()).stream()
-                .map(itemVenda -> converterItemVendaParaDTO(itemVenda)).collect(Collectors.toList());
-               return new VendasResponseDTO(venda.getCodigo(), venda.getData(), itensVendasResponseDTO);
-    }
-
-    private ItemVendaResponseDTO converterItemVendaParaDTO(ItemVenda itemVenda){
-        return new ItemVendaResponseDTO(itemVenda.getCodigo(), itemVenda.getQuantidade(), itemVenda.getPrecoVendido(), itemVenda.getProduto().getCodigo(),
-                itemVenda.getProduto().getDescricao());
-    }
 
 }
 

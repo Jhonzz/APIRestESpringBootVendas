@@ -1,0 +1,5 @@
+
+½
+java:S6204"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(¸ØèÍ8£¿¯ÿ­2J$fce0c2ff-9267-4b60-8f96-4a49ace787f9
+
+java:S1612"LReplace this lambda with method reference 'this::converterItemVendaParaDTO'.(¸ØèÍ8¤¿¯ÿ­2J$241158c0-e679-4927-8a6b-fd1b413a5aa4
