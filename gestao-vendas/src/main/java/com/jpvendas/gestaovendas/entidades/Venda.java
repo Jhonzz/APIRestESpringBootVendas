@@ -1,7 +1,9 @@
 package com.jpvendas.gestaovendas.entidades;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -9,6 +11,8 @@ import java.util.Objects;
 @Entity
 @Table(name = "venda")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Venda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +25,11 @@ public class Venda {
     @ManyToOne //varias vendas podem ser para um cliente
     @JoinColumn(name = "codigo_cliente", referencedColumnName = "codigo") //referencia o campo codigo da coluna do atributo informado
     private Cliente cliente;
+
+    public Venda(LocalDate data, Cliente cliente) {
+        this.data = data;
+        this.cliente = cliente;
+    }
 
     @Override
     public boolean equals(Object o) {

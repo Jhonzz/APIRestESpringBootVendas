@@ -14,21 +14,17 @@ import org.hibernate.validator.constraints.Length;
 @Data
 public class ClienteRequestDTO {
 
-    @Schema(name = "nome")
     @Length(min = 3, max = 50, message = "Nome")
     @NotBlank(message = "Nome")
     private String nome;
 
-    @Schema(name = "telefone")
     @NotBlank(message = "Telefone")
     @Pattern(regexp = "\\(\\d{2}\\)\\d{5}-\\d{4}", message = "Telefone")
     private String telefone;
 
-    @Schema(name = "ativo")
     @NotNull(message = "Ativo") //por ser boolean
     private Boolean ativo;
 
-    @Schema(name = "endereco")
     @NotNull
     @Valid //para validar os bean validation dos campos da classe endereçoDTO
     private EnderecoRequestDTO endereco;

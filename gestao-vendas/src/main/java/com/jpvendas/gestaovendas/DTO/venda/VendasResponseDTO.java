@@ -18,7 +18,7 @@ public class VendasResponseDTO {
     @Schema(name = "Data")
     private LocalDate data;
 
-    @Schema(name = "Item da venda")
+    @Schema(name = "ItensVenda")
     private List<ItemVendaResponseDTO> itemVenda;
 
     @Override

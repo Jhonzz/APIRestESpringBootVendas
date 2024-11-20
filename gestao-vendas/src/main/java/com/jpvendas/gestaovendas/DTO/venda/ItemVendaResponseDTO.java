@@ -10,14 +10,14 @@ import java.math.BigDecimal;
 @Data
 @Schema(name = "Itens da venda response DTO")
 public class ItemVendaResponseDTO {
-    @Schema(name = "Codigo da venda")
+    @Schema(name = "CodigoVenda")
     private Long codigo;
     @Schema(name = "Quantidade")
     private Integer quantidade;
-    @Schema(name = "Preco vendido")
+    @Schema(name = "PrecoVendido")
     private BigDecimal precoVendido;
-    @Schema(name = "Codigo do produto")
+    @Schema(name = "CodigoProduto")
     private Long codigoProduto;
-    @Schema(name = "Descricao do produto")
+    @Schema(name = "DescricaoProduto")
     private String produtoDescricao;
 }

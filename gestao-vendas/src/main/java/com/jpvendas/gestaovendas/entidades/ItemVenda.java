@@ -1,7 +1,9 @@
 package com.jpvendas.gestaovendas.entidades;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -9,6 +11,8 @@ import java.util.Objects;
 @Entity
 @Table(name = "item_venda")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ItemVenda {
 
     @Id
@@ -29,6 +33,13 @@ public class ItemVenda {
     @ManyToOne
     @JoinColumn(name = "codigo_venda", referencedColumnName = "codigo")
     private Venda venda;
+
+    public ItemVenda(Integer quantidade, BigDecimal precoVendido, Produto produto, Venda venda) {
+        this.quantidade = quantidade;
+        this.precoVendido = precoVendido;
+        this.produto = produto;
+        this.venda = venda;
+    }
 
     @Override
     public boolean equals(Object o) {

@@ -1,9 +1,7 @@
 
-Â
-java:S6204#"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(³ÏÆĞøÿÿÿÿ8ˆÈŸ‚­2J$a35431c4-aa4d-4cc6-b8db-5c83fe93944a
-•
-java:S1612#"MReplace this lambda with method reference 'this::converterVendaParaVendaDTO'.(³ÏÆĞøÿÿÿÿ8‹ÈŸ‚­2J$474e0a6d-5154-4e1f-94b5-6b24e13ed9ad
-½
-java:S62042"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(¸ØèÍ8ÈŸ‚­2J$0121e70c-c222-4861-af68-7de2be238d9f
-
-java:S16122"LReplace this lambda with method reference 'this::converterItemVendaParaDTO'.(¸ØèÍ8ÈŸ‚­2J$40ad1179-883c-4cbe-9e1f-676c08778e74
+œ
+java:S6204+"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(‡«Ä¿ûÿÿÿÿ8÷ÌŒ´2
+]
+java:S1128"@Remove this unused import 'org.springframework.beans.BeanUtils'.(ŠğÄÜ8…‚ÌŒ´2
+P
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8…‚ÌŒ´2
