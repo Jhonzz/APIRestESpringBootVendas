@@ -10,10 +10,8 @@ import java.util.List;
 @Data
 @Schema(name = "Cliente da venda response DTO")
 public class ClienteVendaResponseDTO {
-    @Schema(name = "Nome cliente")
     private String nome;
 
-    @Schema(name = "Vendas")
     private List<VendasResponseDTO> vendaResponseDTO;
 
 }

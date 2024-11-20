@@ -79,3 +79,10 @@ Xgestao-vendas/src/main/java/com/jpvendas/gestaovendas/repositorio/VendasReposit
 Wgestao-vendas/src/main/java/com/jpvendas/gestaovendas/controlador/VendaControlador.java,f\4\f4999df2de66c5db1376a33e154111b03ba2c505
 ‡
 Wgestao-vendas/src/main/java/com/jpvendas/gestaovendas/servico/AbstractVendaServico.java,3\d\3deba9a7203a240bc77f255f48fc05a2b341c39b
+„
+Tgestao-vendas/src/main/java/com/jpvendas/gestaovendas/DTO/venda/VendaRequestDTO.java,e\6\e656947fa2faa73e412a81e57f4b35231bf4073f
+ˆ
+Xgestao-vendas/src/main/java/com/jpvendas/gestaovendas/DTO/venda/ItemVendaRequestDTO.java,5\1\51cc20d865e2fd090049a9fb30da2be0ece7010d
+:
+
+DockerFIle,7\6\76dd5121c1fb226048b7a479968c3b9601e3c8c2

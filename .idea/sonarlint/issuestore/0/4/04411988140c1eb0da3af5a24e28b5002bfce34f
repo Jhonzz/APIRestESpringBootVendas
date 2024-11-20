@@ -1,3 +1,7 @@
 
-‹
-java:S2387"H"itemVendaRepositorio" is the name of a field in "AbstractVendaServico".(°±šÃ8»Ì¬‚®2J$de820928-5089-40a9-90a3-39aa81bffd24
+œ
+java:S6204+"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(‡«Ä¿ûÿÿÿÿ8÷ÌŒ´2
+]
+java:S1128"@Remove this unused import 'org.springframework.beans.BeanUtils'.(ŠğÄÜ8…‚ÌŒ´2
+P
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8…‚ÌŒ´2

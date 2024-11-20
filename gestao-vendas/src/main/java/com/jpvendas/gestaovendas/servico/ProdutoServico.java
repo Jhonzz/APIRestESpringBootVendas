@@ -49,6 +49,20 @@ public class ProdutoServico {
         Produto produto = validarProdutoExiste(codigoCategoria, codigoProduto);
         produtoRepositorio.delete(produto);
     }
+
+    protected void atualizarQuantidadeEmEstoque(Produto produto){
+        produtoRepositorio.save(produto);
+    }
+
+    protected Produto validarProdutoExiste(Long codigoProduto){
+        Optional<Produto> produto = produtoRepositorio.findById(codigoProduto);
+        if (produto.isEmpty()){
+            throw new RegraNegocioException(String.format("Produto não encontrado para o id informado: %s", codigoProduto));
+        }
+
+        return produto.get();
+    }
+
     private Produto validarProdutoExiste(Long codigoCategoria, Long codigoProduto) {
         Optional<Produto> produto = buscarPorCodigo(codigoCategoria, codigoProduto);
         if (produto.isEmpty()){

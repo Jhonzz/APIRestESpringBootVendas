@@ -46,4 +46,7 @@ public class Produto {
         this.categoria = categoria;
     }
 
+    public Produto(Long codigo) {
+        this.codigo = codigo;
+    }
 }
