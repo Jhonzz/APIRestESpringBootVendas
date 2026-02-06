@@ -1,7 +1,4 @@
 # API GESTÃO DE VENDAS <br>
-Projeto criado para uma simulação de um sistema de gestão de vendas. O projeto inclui topicos como Produtos, clientes, vendas e entre alguns desses objetos um relacionamento many to many, many to one etc. 
-Tecnologias utilzadas: Java, spring boot, JPA, Docker, Mysql, springdoc para documentação e no momento estou realizando melhorias incluindo testes unitários para o projeto<br>
-<br>
 📱 **Sobre o Projeto**
 Projeto criado para uma simulação de um sistema de gestão de vendas. O projeto inclui topicos como Produtos, clientes, vendas e entre alguns desses objetos um relacionamento many to many, many to one etc.
 
@@ -30,7 +27,8 @@ Docker<br>
 JPA<br>
 Flyway<br>
 maven<br>
-mySQL><br>
+mySQL<br>
+springdoc<br>
 Irei incluir testes unitarios no futuro<br>
 
 📦 **Como Instalar**<br>
